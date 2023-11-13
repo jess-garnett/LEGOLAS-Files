@@ -1,0 +1,32 @@
+devices:
+  depo:
+    s_positions:
+      full_down: -111
+      full_up: 127
+    vol_deg_map: {}
+    x_offset: -67
+    y_offset: -122
+  pH:
+    pH_positions:
+      full_down: -77
+      full_up: 454
+    verbose: true
+    x_offset: 0
+    y_offset: 0
+global:
+  pi1_address: 192.168.0.4
+  pi2_address: 192.168.0.5
+stage:
+  aux_loc_map:
+    acid:
+    - -1307
+    - -212
+    base:
+    - -1307
+    - -776
+    clean:
+    - -1111
+    - -463
+  cell_loc_map: C:\Users\drago\Documents\GitHub\LEGOLAS-Files\cell_map.pkl
+  home_x_offset: -100
+  home_y_offset: -100
