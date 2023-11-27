@@ -1,7 +1,7 @@
 devices:
   depo:
     s_positions:
-      full_down: 0
+      full_down: -152
       full_up: 71
     vol_deg_map:
       0.0: 5

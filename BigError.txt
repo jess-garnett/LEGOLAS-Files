@@ -1,0 +1,110 @@
+Mixing 0.2ml of acid and 1.8ml of base in (0,3)
+Acquired 0.2ml of acid
+Deposited 0.2ml of acid in (0,3)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,3)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,3)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,3)
+Cleaned pH Probe
+pH is Measured as: 3.64
+row 0 col 3 pH 3.64
+Mixing 0.4ml of acid and 1.6ml of base in (0,4)
+Acquired 0.4ml of acid
+Deposited 0.4ml of acid in (0,4)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,4)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,4)
+Acquired 0.4ml of base
+Deposited 0.4ml of base in (0,4)
+Cleaned pH Probe
+pH is Measured as: 5.12
+row 0 col 4 pH 5.12
+Mixing 0.6000000000000001ml of acid and 1.4ml of base in (0,5)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (0,5)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,5)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (0,5)
+Acquired 0.19999999999999996ml of base
+Deposited 0.19999999999999996ml of base in (0,5)
+Cleaned pH Probe
+pH is Measured as: 4.89
+row 0 col 5 pH 4.89
+Mixing 0.8ml of acid and 1.2ml of base in (1,0)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,0)
+Acquired 0.20000000000000007ml of acid
+Deposited 0.20000000000000007ml of acid in (1,0)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (1,0)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (1,0)
+Cleaned pH Probe
+pH is Measured as: 4.67
+row 1 col 0 pH 4.67
+Mixing 1.0ml of acid and 1.0ml of base in (1,1)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,1)
+Acquired 0.4ml of acid
+Deposited 0.4ml of acid in (1,1)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (1,1)
+Acquired 0.4ml of base
+Deposited 0.4ml of base in (1,1)
+Cleaned pH Probe
+pH is Measured as: 4.50
+row 1 col 1 pH 4.5
+Mixing 1.2ml of acid and 0.8ml of base in (1,2)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,2)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,2)
+Acquired 0.6ml of base
+Deposited 0.6ml of base in (1,2)
+Acquired 0.20000000000000007ml of base
+Deposited 0.20000000000000007ml of base in (1,2)
+Cleaned pH Probe
+pH is Measured as: 4.32
+row 1 col 2 pH 4.32
+Mixing 1.4000000000000001ml of acid and 0.5999999999999999ml of base in (1,3)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,3)
+Acquired 0.6ml of acid
+Deposited 0.6ml of acid in (1,3)
+Acquired 0.20000000000000018ml of acid
+Deposited 0.20000000000000018ml of acid in (1,3)
+Acquired 0.5999999999999999ml of base
+Deposited 0.5999999999999999ml of base in (1,3)
+Cleaned pH Probe
+fail to decode message from pH device. raw messsage: b'4\xfe4.14\r\n'.
+
+
+TypeError                                 Traceback (most recent call last)
+c:\Users\drago\Documents\GitHub\LEGOLAS-Files\Code\LEGOLAS_Scripts\LegolasOutline.ipynb Cell 19 line 1
+      8     mix_ab(a,b,*cells[i])
+      9     clean_ph()
+---> 10     ph_data.append(measured_ph(*cells[i]))
+     11 plt.plot(mixes,ph_data)
+     12 plt.xlabel("Acid")
+
+c:\Users\drago\Documents\GitHub\LEGOLAS-Files\Code\LEGOLAS_Scripts\LegolasOutline.ipynb Cell 19 line 3
+     35 def measured_ph(row,col):
+     36     pH_device.move_to_cell(row=row, col=col)
+---> 37     pH = pH_device.pH_measure(stable_time=1) ###should be 20 for actual run
+     38     print(f"row {row} col {col} pH {pH}")
+     39     return pH
+
+File c:\Users\drago\Documents\GitHub\LEGOLAS-Files\Code\LEGOLAS_Scripts\core.py:598, in pH_measure(self, stable_time, location, row, col, x_degree, y_degree)
+    593 self.to_zpos("full_up")
+    595 #for i in range (3):                         # for shaking off droplets
+    596     #self.motor_pH.run_for_degrees(shake)
+    597     #self.motor_pH.run_for_degrees(-shake)
+--> 598 if self.verbose:
+    599     print(f'pH is Measured as: {pH_value:.2f}', )
+    600 return pH_value
+
+TypeError: unsupported format string passed to bytes.__format__
