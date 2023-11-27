@@ -443,7 +443,7 @@ class DepositionDevice(DeviceOnStage):
             
         # self.motor_S.run_for_degrees(-self.s_full_down)
         self.to_zpos("full_down")
-
+        print(type(acq_degree))
         self.motor_V.run_for_degrees(acq_degree)
         self.volume += vol
 
@@ -535,6 +535,7 @@ class pHDevice(DeviceOnStage):
 
     def to_zpos(self, pos, max_iter=4):
         pos = self.pH_positions[pos]
+        print(type(pos))
         motor_move_to_pos(
             motor=self.motor_pH,
             pos=pos,
