@@ -22,8 +22,8 @@ devices:
     y_offset: -151
   pH:
     pH_positions:
-      full_down: 177
-      full_up: 417
+      full_down: 523
+      full_up: 886
     verbose: true
     x_offset: 1
     y_offset: 0
