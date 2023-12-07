@@ -41,6 +41,6 @@ stage:
     clean:
     - -1092
     - -459
-  cell_loc_map: C:\Users\Rahul\Documents\GitHub\LEGOLAS-Files\cell_map.pkl
+  cell_loc_map: C:\Users\drago\Documents\Lab\GenGit\LEGOLAS-Files\cell_map.pkl
   home_x_offset: -100
   home_y_offset: -100
